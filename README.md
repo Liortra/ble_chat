@@ -1,8 +1,10 @@
 # 🔵 BLE Chat App
 
-BLE Chat App is a simple Flutter application that enables two nearby Android devices to communicate via **Bluetooth Low Energy (BLE)** in a **client-server architecture**.
+BLE Chat App is a simple Flutter application that enables two nearby Android devices to communicate
+via **Bluetooth Low Energy (BLE)**.
 
-One device acts as a **server** and the other as a **client**. Messages can be exchanged over a BLE connection using GATT (Generic Attribute Profile).
+One device acts as a **peripheral = "server"** and the other as a **central = "client"**. Messages
+can be exchanged over a BLE connection using GATT (Generic Attribute Profile).
 
 ---
 
@@ -27,21 +29,23 @@ One device acts as a **server** and the other as a **client**. Messages can be e
 
 ## 🛠️ Technologies & Packages
 
-| Purpose            | Package               |
-|--------------------|------------------------|
-| BLE communication  | [`flutter_blue_plus`](https://pub.dev/packages/flutter_blue_plus) |
-| BLE advertising    | [`flutter_ble_peripheral`](https://pub.dev/packages/flutter_ble_peripheral) |
-| State management   | [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) |
-| Dependency Injection | [`get_it`](https://pub.dev/packages/get_it) |
-| UI & Routing       | Flutter + Navigator |
+| Purpose              | Package                                                                     |
+|----------------------|-----------------------------------------------------------------------------|
+| BLE communication    | [`flutter_blue_plus`](https://pub.dev/packages/flutter_blue_plus)           |
+| BLE advertising      | [`flutter_ble_peripheral`](https://pub.dev/packages/flutter_ble_peripheral) |
+| State management     | [`flutter_bloc`](https://pub.dev/packages/flutter_bloc)                     |
+| Dependency Injection | [`get_it`](https://pub.dev/packages/get_it)                                 |
+| UI & Routing         | Flutter + Navigator                                                         |
 
 ---
 
 ## 🔁 Reconnect on Disconnect
 
 - The app monitors connection state using `FlutterBluePlus`.
-- If a connection drops (e.g. due to app backgrounding or signal issues), the client will **automatically try to reconnect**.
-- Reconnection is handled inside `BLECubit` using `checkConnection()` and listener on `BluetoothDeviceState`.
+- If a connection drops (e.g. due to app backgrounding or signal issues), the client will *
+  *automatically try to reconnect**.
+- Reconnection is handled inside `BLECubit` using `checkConnection()` and listener on
+  `BluetoothDeviceState`.
 
 ---
 
@@ -69,19 +73,20 @@ lib/
 Make sure to include these permissions in `AndroidManifest.xml`:
 
 ```xml
-<uses-permission android:name="android.permission.BLUETOOTH" />
-<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-<uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+<uses-permission android:name="android.permission.BLUETOOTH" /><uses-permission
+android:name="android.permission.BLUETOOTH_ADMIN" /><uses-permission
+android:name="android.permission.BLUETOOTH_CONNECT" /><uses-permission
+android:name="android.permission.BLUETOOTH_SCAN" /><uses-permission
+android:name="android.permission.ACCESS_FINE_LOCATION" /><uses-permission
+android:name="android.permission.FOREGROUND_SERVICE" />
 ```
 
 For Android 10+ also define foreground service types:
 
 ```xml
-<service android:name=".MyBleService"
-         android:foregroundServiceType="connectedDevice|dataSync" />
+
+<service android:name=".MyBleService" android:foregroundServiceType="connectedDevice|dataSync" />
 ```
 
 ---
@@ -131,7 +136,7 @@ MIT License © 2025
 
 ## 🧠 Built by
 
-Lior Trachtman 
+Lior Trachtman
 Inspired by hands-on Bluetooth experiments 💙
 
 ---
