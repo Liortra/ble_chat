@@ -15,7 +15,6 @@ dependencies:
   permission_handler: ^11.0.0
   device_info_plus: ^9.0.3
   flutter_blue_plus: ^1.35.3
-  flutter_ble_peripheral: ^1.2.6
 
   cupertino_icons: ^1.0.8
 

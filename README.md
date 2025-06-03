@@ -32,10 +32,11 @@ can be exchanged over a BLE connection using GATT (Generic Attribute Profile).
 | Purpose              | Package                                                                     |
 |----------------------|-----------------------------------------------------------------------------|
 | BLE communication    | [`flutter_blue_plus`](https://pub.dev/packages/flutter_blue_plus)           |
-| BLE advertising      | [`flutter_ble_peripheral`](https://pub.dev/packages/flutter_ble_peripheral) |
 | State management     | [`flutter_bloc`](https://pub.dev/packages/flutter_bloc)                     |
 | Dependency Injection | [`get_it`](https://pub.dev/packages/get_it)                                 |
 | UI & Routing         | Flutter + Navigator                                                         |
+
+> ℹ️ BLE advertising is handled natively via `MethodChannel` using Kotlin.
 
 ---
 
